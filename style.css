@@ -1,0 +1,505 @@
+/* roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* 나눔스퀘어 */
+@import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
+
+:root {
+  /* color */
+  --color-black: #2b1d1e;
+  --color-white: #f8f7f3;
+  --color-yellow: #f8a63b;
+
+  /* font family */
+  --font-family-roboto: "Roboto", sans-serif;
+  --font-family-nanumsquare: "NanumSquare", sans-serif;
+}
+
+/* ========== reset css =========== */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding-top: 77px;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+/* ========== common css ========== */
+[class*="inner"] {
+  width: 1182px;
+  margin: auto;
+}
+section {
+  margin: 100px 0;
+}
+.headline_title {
+  margin-bottom: 50px;
+  font-family: var(--font-family-roboto);
+  font-size: 60px;
+  font-weight: bold;
+  color: var(--color-black);
+  text-align: center;
+}
+
+/* ========== custom css ========== */
+
+/* ===== header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  z-index: 10;
+}
+header .header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header_inner .logo {
+}
+header .header_inner .logo img {
+}
+header .header_inner nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+header .header_inner nav a {
+  font-family: var(--font-family-roboto);
+  font-weight: 500;
+}
+
+/* ===== home ===== */
+#home {
+}
+#home .home_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home .home_inner .home_headline {
+}
+#home .home_inner .home_headline h1 {
+  font-family: var(--font-family-roboto);
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 1em;
+}
+#home .home_inner .home_headline a {
+}
+#home .home_inner .home_headline a img {
+  width: 200px;
+}
+#home .home_inner .home_thum {
+}
+#home .home_inner .home_thum img {
+}
+
+/* ===== about ===== */
+#about {
+}
+#about .about_inner {
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+#about .about_inner .about_headline {
+}
+#about .about_inner .about_headline .headline_title {
+}
+#about .about_inner .about_headline p {
+  font-family: var(--font-family-nanumsquare);
+  font-size: 18px;
+  line-height: 1.5em;
+  color: var(--color-black);
+}
+
+/* 타임라인 */
+#about .about_inner .timeline {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+/* 타임라인 기둥 */
+#about .about_inner .timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: var(--color-black);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+/* 컨텐트를 감싸는 컨테이너 */
+#about .about_inner .timeline .container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+/* 원 */
+#about .about_inner .timeline .container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: var(--color-white);
+  border: 4px solid var(--color-black);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+/* 컨테이너 왼쪽 위치 */
+#about .about_inner .timeline .container.left {
+  left: 0;
+}
+/* 컨테이너 오른쪽 위치 */
+#about .about_inner .timeline .container.right {
+  left: 50%;
+}
+/* 왼쪽 컨테이너의 에로우 */
+#about .about_inner .timeline .container.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--color-black);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--color-black);
+}
+/* 오른쪽 컨테이너의 에로우 */
+#about .about_inner .timeline .container.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--color-black);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--color-black) transparent var(--color-black);
+}
+/* 오른쪽 컨테이너의 원 위치 교정 */
+#about .about_inner .timeline .container.right::after {
+  left: -16px;
+}
+/* 컨텐트 */
+#about .about_inner .timeline .container .content {
+  padding: 30px;
+  background-color: var(--color-black);
+  position: relative;
+  border-radius: 6px;
+  color: var(--color-white);
+}
+#about .about_inner .timeline .container .content h2 {
+  font-weight: 500;
+}
+#about .about_inner .timeline .container .content h3 {
+  font-family: var(--font-family-nanumsquare);
+  font-weight: 500;
+}
+#about .about_inner .timeline .container .content p {
+  margin: 0;
+  line-height: 1.5em;
+  font-family: var(--font-family-nanumsquare);
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 768px) {
+  /* Place the timelime to the left */
+  #about .about_inner .timeline:after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  #about .about_inner .timeline .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  #about .about_inner .timeline .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  #about .about_inner .timeline .container.left::after,
+  #about .about_inner .timeline .container.right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  #about .about_inner .timeline .container.right {
+    left: 0%;
+  }
+}
+
+/* ===== skill ===== */
+#skill {
+}
+#skill .skill_inner {
+}
+#skill .skill_inner .items_wrap {
+}
+#skill .skill_inner .items_wrap .items {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+#skill .skill_inner .items_wrap .items:nth-child(2) {
+  justify-content: space-around;
+}
+#skill .skill_inner .items_wrap .items .item {
+  width: 240px;
+  text-align: center;
+}
+#skill .skill_inner .items_wrap .items .item img {
+}
+#skill .skill_inner .items_wrap .items .item h3 {
+  margin: 30px 0;
+  font-family: var(--font-family-roboto);
+  color: var(--color-black);
+  font-size: 20px;
+  font-weight: 500;
+}
+#skill .skill_inner .items_wrap .items .item p {
+  font-family: var(--font-family-nanumsquare);
+  color: var(--color-black);
+  line-height: 1.5em;
+}
+
+/* ===== portfolio ===== */
+#portfolio {
+}
+#portfolio .portfolio_inner {
+}
+#portfolio .portfolio_inner .portfolio_headline {
+}
+#portfolio .portfolio_inner .portfolio_headline .headline_title {
+}
+#portfolio .portfolio_inner .portfolio_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 23px;
+}
+#portfolio .portfolio_inner .portfolio_btns button {
+  width: 162px;
+  height: 42px;
+  background: var(--color-white);
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  font-family: var(--font-family-roboto);
+  font-size: 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#portfolio .portfolio_inner .portfolio_btns button.on,
+#portfolio .portfolio_inner .portfolio_btns button:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+#portfolio .portfolio_inner .tab_contents {
+}
+#portfolio .portfolio_inner .tab_contents .items {
+  display: none;
+}
+#portfolio .portfolio_inner .tab_contents .items.on {
+  display: block;
+}
+/* website */
+#portfolio .portfolio_inner .tab_contents .items .website_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
+}
+#portfolio .portfolio_inner .tab_contents .items .website_item .desc {
+}
+#portfolio .portfolio_inner .tab_contents .items .website_item .desc h2 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: var(--font-family-nanumsquare);
+}
+#portfolio .portfolio_inner .tab_contents .items .website_item .desc p {
+  font-family: var(--font-family-nanumsquare);
+  line-height: 1.6em;
+}
+#portfolio
+  .portfolio_inner
+  .tab_contents
+  .items
+  .website_item
+  .desc
+  .desc_btns {
+}
+#portfolio
+  .portfolio_inner
+  .tab_contents
+  .items
+  .website_item
+  .desc
+  .desc_btns
+  a {
+  display: inline-block;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  background: var(--color-white);
+  font-family: var(--font-family-roboto);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#portfolio
+  .portfolio_inner
+  .tab_contents
+  .items
+  .website_item
+  .desc
+  .desc_btns
+  a:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+#portfolio .portfolio_inner .tab_contents .items .website_item .video {
+  width: 516px;
+}
+#portfolio .portfolio_inner .tab_contents .items .website_item .video video {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+/* card UI & hover effect */
+#portfolio .portfolio_inner .tab_contents .items .card_items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 45px;
+}
+#portfolio .portfolio_inner .tab_contents .items .card_items .card_item {
+  cursor: pointer;
+}
+#portfolio .portfolio_inner .tab_contents .items .card_items .card_item .thum {
+  width: 355px;
+  height: 280px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+#portfolio
+  .portfolio_inner
+  .tab_contents
+  .items
+  .card_items
+  .card_item
+  .thum
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+#portfolio
+  .portfolio_inner
+  .tab_contents
+  .items
+  .card_items
+  .card_item
+  .thum:hover
+  img {
+  transform: scale(1.2) rotate(5deg);
+}
+#portfolio .portfolio_inner .tab_contents .items .card_items .card_item .desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+#portfolio
+  .portfolio_inner
+  .tab_contents
+  .items
+  .card_items
+  .card_item
+  .desc
+  b {
+  font-size: 18px;
+  font-family: var(--font-family-roboto);
+  color: var(--color-black);
+  font-weight: 500;
+}
+#portfolio
+  .portfolio_inner
+  .tab_contents
+  .items
+  .card_items
+  .card_item
+  .desc
+  img {
+}
+
+/* ===== contact ===== */
+#contact {
+  margin-bottom: 0;
+  padding: 75px 0;
+  background: var(--color-black);
+}
+#contact .contact_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+#contact .contact_inner .contact_headline {
+  color: var(--color-white);
+  font-family: var(--font-family-nanumsquare);
+}
+#contact .contact_inner .contact_headline h2 {
+  font-size: 30px;
+}
+#contact .contact_inner .contact_headline p {
+  font-size: 22px;
+  line-height: 1.6em;
+}
+#contact .contact_inner .contact_headline a.email {
+  font-size: 25px;
+  color: var(--color-white);
+  font-family: var(--font-family-roboto);
+}
+#contact .contact_inner a.hire_me {
+  width: 200px;
+}
+#contact .contact_inner a.hire_me img {
+  width: 100%;
+}

@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background: #eee;
+  color: #262626;
+}
+.accordion {
+  list-style: none;
+  padding: 0;
+  width: 700px;
+}
+.accordion input[type="radio"] {
+  display: none;
+}
+.accordion li {
+  padding: 20px;
+  margin: 20px 0;
+  background: #eee;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+.accordion li label {
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.accordion li label:before {
+  content: "+";
+  margin-right: 10px;
+}
+.accordion li .content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.accordion li .content p {
+  font-size: 20px;
+  line-height: 1.8em;
+  letter-spacing: -1px;
+}
+
+.accordion li input[type="radio"]:checked + label + .content {
+  max-height: 400px;
+}
+.accordion li input[type="radio"]:checked + label:before {
+  content: "-";
+}

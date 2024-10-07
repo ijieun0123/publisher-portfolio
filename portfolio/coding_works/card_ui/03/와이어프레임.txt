@@ -1,0 +1,16 @@
+section
+  .inner
+    h1.heading
+    .items
+      .item
+        .photo
+          img
+        .detail
+          h2
+          p
+          .user_info
+            span.user
+              img
+            span.comment
+              i*2
+        a.btn

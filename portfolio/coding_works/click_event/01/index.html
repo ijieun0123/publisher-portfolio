@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제이쿼리 하드코딩 탭</title>
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>제과의 역사</h1>
+      <div class="food_imgs">
+        <div class="img_box">
+          <img src="img/1.jpeg" class="active" data-alt="tab1" alt="" />
+        </div>
+        <div class="img_box">
+          <img src="img/2.jpeg" data-alt="tab2" alt="" />
+        </div>
+        <div class="img_box">
+          <img src="img/3.jpeg" data-alt="tab3" alt="" />
+        </div>
+        <div class="img_box">
+          <img src="img/4.jpeg" data-alt="tab4" alt="" />
+        </div>
+      </div>
+      <div class="food_contents">
+        <div class="content_box" id="tab1">
+          <p>
+            기원에 대해서는 설이 다양하다. 과거 미국에 이민 온 네덜란드계
+            미국인이 즐겨 먹은 음식이라는 설이 가장 신빙성있다고 여겨진다. 실제
+            당시 네덜란드인은 튀김 요리를 즐겨 먹었으며, 오늘날까지도 도넛
+            비슷한 튀긴 전통 빵을 쉽게 볼 수 있다. 당시 조리법은 돼지기름에
+            밀가루 반죽을 동그랗게 말아 던져 건져낸 뒤, 설탕에 굴렸다고 한다.[4]
+            그런데 원조(?) 네덜란드식은 구멍이 없고 한국의 찹쌀도넛과 비슷한
+            모양이다.
+          </p>
+        </div>
+        <div class="content_box" id="tab2">
+          <p>
+            오늘날의 작은 햄버거 모양의 마카롱이 프랑스에서 만들어져서 프랑스가
+            마카롱 본산지로 알려져 있지만, 마카롱의 정확한 기원은 이탈리아에서
+            탄생한 것으로 짐작할 수 있다. 마카로니와 그 어원이 같은데 반죽을
+            치댄다는 의미의 maccheroni에서 유래했다. 참고로 폴란드에서는 라면을
+            포함한 면요리를 마카론이라고 부른다. 16세기 중반 이탈리아 피렌체의
+            귀족 카트린 드 메디시스가 프랑스 국왕 앙리 2세에게 시집올 때 준비한
+            혼수품 중 포크, 향신료, 셔벗, 마카롱 등이 있었던 것이다.
+          </p>
+        </div>
+        <div class="content_box" id="tab3">
+          <p>
+            기원은 영국에서 시작되었다. 본래 컵케이크는 머핀에서 유래되었는데,
+            당시 영국에서는 머핀을 "페어리 케이크(fairy cake)"라고 부르며 오래
+            전부터 접대용으로 머핀을 내놓았다고 한다. 이것이 미국으로 건너가며
+            "케이크 머핀"과 "브레드 머핀"으로 발달하였고, 여기에다가 버터,
+            크림치즈, 향료, 색소 등을 첨가하여 모양과 맛을 예쁘게 잡은 모양이
+            작은 케이크와 같다 해서 "컵케이크"라는 이름이 탄생하게 된 것이다.
+          </p>
+        </div>
+        <div class="content_box" id="tab4">
+          <p>
+            인류가 농업을 시작하면서 곡식을 갈아 물과 섞은 후 부쳐내 먹었던
+            것에서 유래되었다. 따라서 팬케이크는 고기 구이와 함께 역사가 매우
+            오래되었다고 할 수 있다. 서양에서 팬케이크는 단지 디저트로 먹는
+            제과류를 의미하는 것뿐만 아니라 모든 종류의 전이나 부침개를
+            총칭하며, 한국의 굴전 등도 '오이스터 팬케이크' 등으로 불린다. 실제
+            역사에서도 빈민의 주식으로 이용되었다.[2]
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".content_box").hide().eq(0).show();
+      $(".food_imgs .img_box img").click(function () {
+        $(this).addClass("active");
+        $(this).parent().siblings().children("img").removeClass("active");
+
+        $(".food_contents .content_box").fadeOut();
+        $("#" + $(this).attr("data-alt")).fadeIn();
+      });
+    </script>
+  </body>
+</html>

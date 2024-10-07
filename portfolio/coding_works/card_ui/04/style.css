@@ -1,0 +1,143 @@
+/* default css */
+* {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background: url(img/background.jpg) no-repeat center/cover;
+}
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* reset css */
+a {
+  text-decoration: none;
+}
+
+/* custom css */
+section.login {
+  min-width: 400px;
+  padding: 50px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+section.login img {
+  width: 100px;
+}
+section.login h1 {
+  font-size: 35px;
+}
+section.login form .input_field {
+  position: relative;
+}
+section.login form .input_field input {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #eee;
+  color: #fff;
+  font-size: 18px;
+}
+section.login form .input_field input:focus {
+  outline: none;
+}
+section.login form .input_field input:focus + span,
+section.login form .input_field input:valid + span {
+  top: 0;
+  font-size: 12px;
+  color: royalblue;
+  font-weight: bold;
+}
+section.login form .input_field span {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: 0.5s;
+}
+section.login form .input_field span.warning {
+  color: crimson !important;
+  animation: warning 0.3s ease-in-out 2;
+}
+@keyframes warning {
+  0% {
+    transform: translateX(-5px);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+section.login form input[type="submit"] {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  background: yellowgreen;
+  color: #fff;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 18px;
+  cursor: pointer;
+}
+section.login form .add_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 0;
+}
+section.login form .add_info label {
+  cursor: pointer;
+  color: #ccc;
+}
+section.login form .add_info label input[type="checkbox"] {
+  display: none;
+}
+section.login form .add_info label input[type="checkbox"] + em {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  transform: translateY(4px);
+  background: url(img/icon-checkbox.png) no-repeat;
+  background-position: left;
+}
+section.login form .add_info label input[type="checkbox"]:checked + em {
+  background-position: right;
+}
+section.login form .add_info label input[type="checkbox"]:checked + em + span {
+  color: #1bbe93;
+}
+section.login form .add_info a {
+  color: #ccc;
+}
+section.login form .add_info a:hover {
+  text-decoration: underline;
+}

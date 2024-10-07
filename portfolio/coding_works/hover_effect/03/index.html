@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu hover effect with change background</title>
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <nav id="menu">
+      <img src="img/1.jpeg" alt="" />
+      <ul>
+        <li><a data-image="img/1.jpeg" href="#">진도개</a></li>
+        <li><a data-image="img/2.jpeg" href="#">불도그</a></li>
+        <li><a data-image="img/3.jpeg" href="#">허스키</a></li>
+        <li><a data-image="img/4.jpeg" href="#">포메라니안</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      var image = $("#menu img").attr("src");
+      // console.log(image);
+      $("#menu ul li a").mouseover(function () {
+        var currentImage = $(this).attr("data-image");
+        // console.log(currentImage);
+        $(this)
+          .parent()
+          .parent()
+          .parent()
+          .find("img")
+          .attr("src", currentImage);
+        $("#menu img").css("opacity", 1);
+      });
+      $("#menu ul li a").mouseout(function () {
+        $("#menu img").css("opacity", 0.5);
+      });
+    </script>
+  </body>
+</html>

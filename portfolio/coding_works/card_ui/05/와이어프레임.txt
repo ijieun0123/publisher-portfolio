@@ -1,0 +1,27 @@
+.container
+  h1
+  .items
+    .item
+      .icon_wrap
+        i
+      h3.level
+      h2.price
+      ul
+        li*4
+      a.btn
+    .item
+      .icon_wrap
+        i
+      h3.level
+      h2.price
+      ul
+        li*4
+      a.btn
+    .item
+      .icon_wrap
+        i
+      h3.level
+      h2.price
+      ul
+        li*4
+      a.btn

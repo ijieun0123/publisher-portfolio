@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "HancomSans-Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomSans-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  line-height: 1.5em;
+  font-family: "HancomSans-Light";
+}
+.heading {
+  margin: 80px;
+  font-size: 66px;
+  text-align: center;
+  font-weight: 400;
+}
+.heading h2 {
+}
+.heading span {
+  color: deeppink;
+}
+.items_inner {
+  width: 1350px;
+  margin: auto;
+}
+.items_inner .items {
+  display: flex;
+  gap: 20px;
+  counter-reset: item;
+}
+.items_inner .items .item {
+  position: relative;
+  flex: 1;
+}
+.items_inner .items .item:before {
+  position: absolute;
+  counter-increment: item;
+  content: counter(item);
+  width: 40px;
+  height: 40px;
+  background: gray;
+  z-index: 10;
+  border-radius: 0 0 5px 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 45px;
+}
+.items_inner .items .item:hover:before {
+  background: crimson;
+}
+.items_inner .items .item .photo {
+  position: relative;
+  height: 390px;
+}
+.items_inner .items .item .photo a {
+}
+.items_inner .items .item .photo a img {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+.items_inner .items .item .photo a img:nth-child(1) {
+  z-index: 1;
+}
+.items_inner .items .item .photo:hover a img:nth-child(1) {
+  opacity: 0;
+}
+.items_inner .items .item .detail {
+  position: relative;
+}
+.items_inner .items .item .detail span {
+  display: block;
+}
+.items_inner .items .item .detail .price {
+}
+.items_inner .items .item .detail .price b {
+  margin-right: 5px;
+  color: crimson;
+}
+.items_inner .items .item .detail .name {
+  font-weight: 500;
+}
+.items_inner .items .item .detail .count {
+  color: #777;
+}
+.items_inner .items .item .detail .like {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.items_inner .items .item .detail .like:before {
+  content: "\f004";
+  font-family: fontawesome;
+  font-size: 18px;
+  color: #dbdbdb;
+}
+.items_inner .items .item .detail .like.active:before {
+  content: "\f004";
+  color: crimson;
+}

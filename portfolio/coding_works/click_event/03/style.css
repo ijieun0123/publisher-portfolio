@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+}
+.container {
+  position: relative;
+}
+input[name="tabmenu"] {
+  display: none;
+}
+.slide {
+  position: relative;
+  width: 900px;
+  height: 700px;
+  overflow: hidden;
+}
+.slide .slide-inner {
+  position: absolute;
+  display: flex;
+  width: 2700px;
+  height: 700px;
+  transition: 0.5s ease-in-out;
+}
+.slide .slide-inner a {
+  display: inline-block;
+  width: 900px;
+  height: 700px;
+}
+.slide .slide-inner a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.btn label {
+  display: inline-block;
+  width: 100px;
+  height: 8px;
+  background: lightgray;
+  cursor: pointer;
+}
+
+input[id="tab1"]:checked ~ .slide .slide-inner {
+  left: 0;
+}
+input[id="tab2"]:checked ~ .slide .slide-inner {
+  left: -900px;
+}
+input[id="tab3"]:checked ~ .slide .slide-inner {
+  left: -1800px;
+}
+
+input[id="tab1"]:checked ~ .btn label[for="tab1"],
+input[id="tab2"]:checked ~ .btn label[for="tab2"],
+input[id="tab3"]:checked ~ .btn label[for="tab3"] {
+  background: #fff;
+}

@@ -1,0 +1,10 @@
+button.modal_btn
+.overlay
+.modal
+  .img_wrap
+    img
+  .txt_wrap
+    h2
+    input:text
+    button
+    p

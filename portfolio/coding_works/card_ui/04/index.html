@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유효성 체크 애니메이션 로그인폼</title>
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- favicon -->
+    <link rel="icon" href="img/logo-favicon.png" />
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="login">
+      <img src="img/logo-favicon.png" alt="" />
+      <h1>Login</h1>
+      <form action="">
+        <div class="input_field">
+          <input type="email" name="" id="userId" autocomplete="off" required />
+          <span>user email</span>
+        </div>
+        <div class="input_field">
+          <input
+            type="password"
+            name=""
+            id="userPw"
+            required
+            minlength="8"
+            maxlength="12"
+          />
+          <span>password</span>
+        </div>
+        <input type="submit" value="sign in" id="loginBtn" />
+        <div class="add_info">
+          <label>
+            <input type="checkbox" name="" />
+            <em></em>
+            <span>Save your Email?</span>
+          </label>
+          <a href="#none">Forgot Password?</a>
+        </div>
+      </form>
+    </section>
+
+    <script>
+      const userId = $("#userId"),
+        userPw = $("#userPw"),
+        loginBtn = $("#loginBtn");
+
+      loginBtn.click(function () {
+        if (userId.val() == "") {
+          userId.next("span").addClass("warning");
+          setTimeout(function () {
+            userId.next("span").removeClass("warning");
+          }, 1500);
+        } else if (userPw.val() == "") {
+          userPw.next("span").addClass("warning");
+          setTimeout(function () {
+            userPw.next("span").removeClass("warning");
+          }, 1500);
+        }
+      });
+    </script>
+  </body>
+</html>

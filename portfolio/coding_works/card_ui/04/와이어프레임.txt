@@ -1,0 +1,12 @@
+section.login
+  img
+  h1
+  form
+    .input_field
+      input:email, span
+    .input_field
+      input:password, span
+    input:submit
+    .add_info
+      label > input:checkbox, em, span
+      a
